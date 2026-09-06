@@ -62,7 +62,7 @@ Node.js 22.13+ is required to build. Installed dependencies are local to the exp
 python -m unittest discover -s tests -v
 ```
 
-The GitHub Actions workflow installs fresh dependencies and checks conversion, boundaries, and a self-authored API/build fixture. It does not fetch or publish an unlicensed engine. The fixture proves adapter/build wiring, not particle visuals. [Validation notes](docs/VALIDATION.md) distinguish local real-runtime verification from CI, which cannot be called successful until it has actually run on GitHub.
+The GitHub Actions workflow installs fresh dependencies and checks conversion, boundaries, and a self-authored API/build fixture. It does not fetch or publish an unlicensed engine. The fixture proves adapter/build wiring, not particle visuals. [Validation notes](docs/VALIDATION.md) distinguish local real-runtime verification from CI, including the verified Ubuntu/macOS/Windows and Node 22/24 run.
 
 ## License and relationship to the local version
 

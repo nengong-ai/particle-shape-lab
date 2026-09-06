@@ -15,11 +15,14 @@ Testing found and corrected active metadata acceptance, missing original-input e
 
 The dependency package-lock records exact resolutions. The known Vite large-bundle warning remains in the external renderer build; it is not treated as a build failure.
 
-## Configured, not yet executed remotely
+## Verified on GitHub Actions
 
-The GitHub Actions workflow is prepared for Python 3.12 on Ubuntu/macOS/Windows and a Node 22/24 adapter-fixture build on Ubuntu. It does not download an engine, publish a viewer or upload third-party artifacts.
+The first public run completed successfully on 2026-09-06 for commit `f9d58eef0fe5e0cc1a948491d77fe2bfde48bd70`:
 
-No GitHub repository or remote workflow run was created during this preparation. Therefore remote CI is **not yet reported as passing**, and local directory isolation is not claimed as a second physical machine or a Windows/Linux validation.
+- Python 3.12 tests on Ubuntu, macOS, and Windows: success.
+- Non-rendering adapter fixture with independent npm installs on Node 22 and Node 24: success.
+
+[View the verified run](https://github.com/nengong-ai/particle-showcase-public/actions/runs/34034227925). These are actual GitHub-hosted jobs, not local directory simulations. The workflow does not download an engine, publish a viewer, or upload third-party artifacts. The adapter fixture remains a build/contract test and does not establish particle visual quality.
 
 The workflow environment scopes were checked against GitHub's [context availability reference](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability); runner-dependent paths are used in step environments, not unsupported job-level contexts.
 
