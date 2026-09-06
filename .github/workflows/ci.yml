@@ -1,0 +1,74 @@
+name: Shape tools and non-rendering adapter checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: Python 3.12 / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install fresh Python dependencies
+        run: python -m pip install --no-cache-dir -r requirements.txt
+      - name: Geometry, validation and export tests
+        env:
+          TEST_TMPDIR: ${{ runner.temp }}/shape-unit-tests
+        run: python -m unittest discover -s tests -v
+
+  adapter:
+    name: Non-rendering stub / Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22', '24']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      # Job-level env permits github/matrix, but not the runner context.
+      FIXTURE_OUT: ${{ github.workspace }}/../adapter-stub-export-${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false
+      - name: Install fresh Python dependencies
+        run: python -m pip install --no-cache-dir -r requirements.txt
+      - name: Convert own shape and export original API stub
+        run: python tests/build_fixture.py --out "$FIXTURE_OUT"
+      - name: Install independent dependencies in export
+        working-directory: ${{ env.FIXTURE_OUT }}
+        env:
+          npm_config_cache: ${{ runner.temp }}/fresh-npm-cache
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Type-check adapter against the non-rendering stub
+        working-directory: ${{ env.FIXTURE_OUT }}
+        run: node build.mjs --check
+      - name: Bundle adapter against the non-rendering stub
+        working-directory: ${{ env.FIXTURE_OUT }}
+        run: node build.mjs
+      # No renderer is downloaded or uploaded, and no visual acceptance is claimed.

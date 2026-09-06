@@ -1,0 +1,14 @@
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#050608;color:#eee}
+*{box-sizing:border-box}body{margin:0}section{height:100svh;position:relative;overflow:hidden}
+.backdrop{position:fixed;inset:0;pointer-events:none}canvas{display:block;width:100%;height:100%}
+.target{position:absolute;inset:15% 18%;pointer-events:none}.target svg{width:100%;height:100%;opacity:0}
+.drag{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;cursor:grab;touch-action:none}
+.drag:focus-visible{outline:1px solid #fff3;outline-offset:-10px}
+header,footer{position:fixed;z-index:2;left:4%;right:4%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+header{top:24px;pointer-events:none}h1{font-size:16px;font-weight:500;margin:0}header span{font-size:11px;color:#999}
+footer{bottom:24px;justify-content:flex-end;pointer-events:none}footer button{pointer-events:auto;background:#ffffff0d;color:#eee;border:1px solid #ffffff20;padding:9px 14px;border-radius:8px;cursor:pointer}
+#status{position:fixed;left:4%;bottom:24px;font-size:13px;color:#bbb}
+[data-hidden=true] header,[data-hidden=true] footer{display:none}[data-hidden=true] .drag:focus-visible{outline:none}
+@media(max-width:600px){header span{display:none}.target{inset:20% 8%}header,footer{left:18px;right:18px}}
+
+#restore{display:none;position:fixed;right:4%;bottom:24px;z-index:3;background:#111;color:#aaa;border:1px solid #444;padding:9px 14px;border-radius:8px;cursor:pointer}[data-hidden=true] #restore{display:block}

@@ -1,0 +1,28 @@
+{
+  "name": "particle-showcase-public",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "SVG/PNG shape tools and an optional bridge to a separately supplied particle engine",
+  "scripts": {
+    "test": "python -m unittest discover -s tests -v"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "postprocessing": "6.39.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "@types/three": "0.180.0",
+    "typescript": "5.9.3",
+    "vite": "6.4.2"
+  }
+}

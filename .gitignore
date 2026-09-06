@@ -1,0 +1,26 @@
+# Installed dependencies, caches and generated output are not public source.
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.tmp/
+.cache/
+.cache-*/
+dist/
+build/
+generated/
+outputs/
+artifacts/
+*.log
+*.zip
+.DS_Store
+.env
+.env.*
+!.env.example
+# A separately supplied engine must never be committed here.
+runtime/
+external-runtime/
+vendor/
