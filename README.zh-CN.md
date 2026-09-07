@@ -1,8 +1,8 @@
-# Particle Showcase Public
+# Particle Shape Lab
 
 [English](README.md) | **简体中文**
 
-**把一张普通的 SVG、透明 PNG 或黑白轮廓，变成粒子视觉作品可以直接使用的形状数据。**
+**把 SVG 和图片转换成粒子渲染器可复用的标准形状数据。**
 
 ![ChatGPT particle showcase](assets/chatgpt.gif)
 
@@ -12,11 +12,11 @@
 
 *以上为单独制作的品牌粒子演示项目效果，使用外部引擎和品牌专属预设；这些引擎代码与预设不包含在公开版中。[演示素材说明](assets/README.md)。*
 
-Particle Showcase Public 是一个面向 **AI Agent 和自动化工作流** 的图形处理工具。
+Particle Shape Lab 是一个面向 **AI Agent 和自动化工作流** 的图形处理工具。
 
 它负责粒子视觉制作里最重复、也最容易出问题的一段工作：**准备图形、检查结构、转换形状数据，再交给粒子渲染引擎。**
 
-输入一个简单 SVG、透明 PNG 或黑白轮廓，Particle Showcase 会生成标准化图形与形状数据，同时尽量保留原始结构中的：
+输入一个简单 SVG、透明 PNG 或黑白轮廓，Particle Shape Lab 会生成标准化图形与形状数据，同时尽量保留原始结构中的：
 
 * 外轮廓
 * 内部孔洞
@@ -27,7 +27,7 @@ Particle Showcase Public 是一个面向 **AI Agent 和自动化工作流** 的�
 
 如果再接入兼容的外部粒子渲染引擎，还可以进一步生成适合展示和录屏的交互页面，例如拖动旋转、动画重播，以及隐藏控制界面。
 
-> **需要注意：Particle Showcase Public 不包含粒子渲染引擎。**
+> **需要注意：Particle Shape Lab 不包含粒子渲染引擎。**
 >
 > 公开仓库提供的是图形转换工具、标准化形状数据和渲染接入适配。
 > 图形转换可以独立使用；动态粒子展示需要另外准备兼容的渲染引擎。
@@ -41,16 +41,16 @@ Particle Showcase Public 是一个面向 **AI Agent 和自动化工作流** 的�
 ```text
 SVG / Transparent PNG / B&W Shape
                 ↓
-      Particle Showcase Public
+      Particle Shape Lab
                 ↓
    Normalized Graphic / Shape Data
                 ↓
         Your Particle Engine
                 ↓
- Interactive Particle Showcase
+ Interactive particle showcase
 ```
 
-Particle Showcase 处理的是中间这一层。
+Particle Shape Lab 处理的是中间这一层。
 
 它不试图重新实现一套完整粒子引擎，而是把原本散落在不同脚本、格式转换和手工调整里的准备工作整理成一个稳定、可重复调用的流程。
 
@@ -60,7 +60,7 @@ Particle Showcase 处理的是中间这一层。
 
 ### 适合 Agent 的工作流
 
-Particle Showcase 从一开始就是按照 AI Agent 和自动化任务的使用方式设计的。
+Particle Shape Lab 从一开始就是按照 AI Agent 和自动化任务的使用方式设计的。
 
 Agent 可以拿到一个图形后完成：
 
@@ -86,7 +86,7 @@ Agent 可以拿到一个图形后完成：
 * Logo 中彼此分开的几个元素
 * 多个不相连的轮廓
 
-Particle Showcase 会尽量保留这些结构，而不是粗暴地把整个图形压成一个实心形状。
+Particle Shape Lab 会尽量保留这些结构，而不是粗暴地把整个图形压成一个实心形状。
 
 ### 支持常用的简单图形输入
 
@@ -116,7 +116,7 @@ Particle Showcase 会尽量保留这些结构，而不是粗暴地把整个图�
 * 干净的录屏画面
 * 图标 / Logo 粒子演示页面
 
-**渲染能力来自外部引擎，Particle Showcase Public 负责准备数据与完成接入。**
+**渲染能力来自外部引擎，Particle Shape Lab 负责准备数据与完成接入。**
 
 ---
 
@@ -145,7 +145,7 @@ Particle Showcase 会尽量保留这些结构，而不是粗暴地把整个图�
 
 ### AI Agent 工作流
 
-Particle Showcase 也可以作为更大 Agent 工作流中的一个工具节点。
+Particle Shape Lab 也可以作为更大 Agent 工作流中的一个工具节点。
 
 例如：
 
@@ -154,7 +154,7 @@ Particle Showcase 也可以作为更大 Agent 工作流中的一个工具节点�
         ↓
 Agent 生成 SVG
         ↓
-Particle Showcase 转换
+Particle Shape Lab 转换
         ↓
 外部粒子引擎渲染
         ↓
@@ -167,7 +167,7 @@ Particle Showcase 转换
 
 ## 快速开始
 
-Particle Showcase Public 可以只做图形转换，也可以继续接入自己的粒子渲染环境。
+Particle Shape Lab 可以只做图形转换，也可以继续接入自己的粒子渲染环境。
 
 ### 1. 准备输入
 
@@ -226,7 +226,7 @@ PNG 转换还会生成 `traced.svg`。`manifest.json` 记录原件摘要、转�
 
 ### 3. 使用生成的数据
 
-到这一步，**Particle Showcase Public 本身的核心转换工作已经完成。**
+到这一步，**Particle Shape Lab 本身的核心转换工作已经完成。**
 
 生成的数据可以：
 
@@ -263,7 +263,7 @@ python serve.py --port 4195
 ```text
 Graphic
   ↓
-Particle Showcase Public
+Particle Shape Lab
   ↓
 Shape Data
   ↓
@@ -363,7 +363,7 @@ PNG 会经过轮廓 / 区域提取，因此输入质量会直接影响最终 Sha
 
 ## 依赖
 
-Particle Showcase Public 的依赖主要来自两部分：
+Particle Shape Lab 的依赖主要来自两部分：
 
 ### 图形转换依赖
 
@@ -379,7 +379,7 @@ SVG 只需 Python 3.12 标准库；PNG 使用 [requirements.txt](requirements.tx
 
 ### 渲染依赖
 
-**不包含在 Particle Showcase Public 中。**
+**不包含在 Particle Shape Lab 中。**
 
 如果需要动态粒子展示，需要自行提供兼容的渲染环境或粒子引擎，例如基于：
 
@@ -392,7 +392,7 @@ SVG 只需 Python 3.12 标准库；PNG 使用 [requirements.txt](requirements.tx
 
 ---
 
-## 公开仓库范围
+## 仓库内容
 
 公开版本主要包含：
 
@@ -420,7 +420,7 @@ python -m unittest discover -s tests -v
 
 ## 许可
 
-Particle Showcase Public 的源码使用仓库中 `LICENSE` 文件声明的许可协议。
+Particle Shape Lab 的源码使用仓库中 `LICENSE` 文件声明的许可协议。
 
 请注意：
 
@@ -432,7 +432,7 @@ MIT 许可覆盖本工具代码、文档和自编通用测试示例。**品牌 L
 
 ---
 
-## 为什么做 Particle Showcase？
+## 为什么做 Particle Shape Lab？
 
 一个粒子效果真正开始渲染之前，经常还有一堆不起眼的工作：
 
@@ -452,6 +452,6 @@ MIT 许可覆盖本工具代码、文档和自编通用测试示例。**品牌 L
 
 烦人的地方是，每换一张图，又来一次。
 
-**Particle Showcase Public 想解决的，就是这一段。**
+**Particle Shape Lab 想解决的，就是这一段。**
 
 把静态图形整理成稳定、可复用的粒子形状输入，让 Agent 和渲染引擎把时间花在真正有意思的部分。

@@ -1,9 +1,9 @@
 ---
-name: particle-showcase-public
+name: particle-shape-lab
 description: 将简单SVG或透明/黑白PNG转换成粒子引擎可用的形状数据；用户已有兼容外部运行目录时可导出交互页面。不携带渲染器、官方品牌素材或私有品牌动画预设。
 ---
 
-# Particle Showcase Public
+# Particle Shape Lab
 
 先明确输入与输出目录。普通SVG/PNG转换直接调用本Skill的 `scripts/shape.py --input <file> --out <new-directory>`。SVG只需Python标准库，PNG需已有Pillow/NumPy；缺少时按用户授权准备隔离环境，不假设系统Python已经装好。
 

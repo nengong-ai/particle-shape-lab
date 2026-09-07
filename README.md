@@ -1,8 +1,8 @@
-# Particle Showcase Public
+# Particle Shape Lab
 
 **English** | [简体中文](README.zh-CN.md)
 
-**Turn simple static graphics into clean, reusable shape data for particle-based visual experiences.**
+**Turn SVGs and images into clean, reusable shape data for particle renderers.**
 
 ![ChatGPT particle showcase](assets/chatgpt.gif)
 
@@ -12,7 +12,7 @@
 
 *These renders come from a separate brand demonstration using an external engine and brand-specific presets. That engine and those presets are not included in this public toolkit. See [preview asset notes](assets/README.md).*
 
-Particle Showcase Public is a graphics-processing toolkit designed for **AI Agents and automated creative workflows**.
+Particle Shape Lab is a graphics-processing toolkit designed for **AI Agents and automated creative workflows**.
 
 Give it a simple SVG, transparent PNG, or black-and-white silhouette, and it converts the input into normalized graphics and standardized shape data that can be consumed by compatible particle renderers.
 
@@ -25,7 +25,7 @@ Where possible, it preserves important structural details such as:
 
 Connect the generated data to a compatible external particle engine, and you can build interactive showcase pages with features such as drag-to-rotate, replay, and hidden UI for clean recordings.
 
-> **Important:** Particle Showcase Public does not include a complete particle rendering engine.
+> **Important:** Particle Shape Lab does not include a complete particle rendering engine.
 >
 > The public repository provides graphics conversion tools, standardized shape data, and renderer integration adapters.
 > Graphics conversion works independently. Dynamic particle rendering requires a compatible external engine.
@@ -39,16 +39,16 @@ A typical workflow looks like this:
 ```text
 SVG / Transparent PNG / B&W Shape
                 ↓
-      Particle Showcase Public
+      Particle Shape Lab
                 ↓
      Normalized Shape Data
                 ↓
        Your Particle Engine
                 ↓
- Interactive Particle Showcase
+ Interactive particle showcase
 ```
 
-Particle Showcase focuses on the middle of that pipeline.
+Particle Shape Lab focuses on the middle of that pipeline.
 
 Instead of repeatedly writing one-off scripts to validate simple SVGs, trace PNG contours, preserve holes, and adapt shape data for a renderer, the toolkit turns those steps into a reusable workflow.
 
@@ -58,7 +58,7 @@ Instead of repeatedly writing one-off scripts to validate simple SVGs, trace PNG
 
 ### Built for AI Agent workflows
 
-Particle Showcase is designed to fit naturally into Agent-driven pipelines.
+Particle Shape Lab is designed to fit naturally into Agent-driven pipelines.
 
 An Agent can take a graphics input and run a predictable sequence:
 
@@ -84,7 +84,7 @@ A useful graphics pipeline needs to understand things like:
 * separate elements inside a logo
 * multiple disconnected silhouettes
 
-Particle Showcase attempts to preserve those structures instead of flattening everything into a single filled region.
+Particle Shape Lab attempts to preserve those structures instead of flattening everything into a single filled region.
 
 ### Supports practical input formats
 
@@ -118,7 +118,7 @@ Once connected to a particle engine, the resulting showcase can support capabili
 
 These rendering features come from the connected engine.
 
-Particle Showcase Public prepares and adapts the data required to drive it.
+Particle Shape Lab prepares and adapts the data required to drive it.
 
 ---
 
@@ -136,7 +136,7 @@ Spend less time repeating conversion steps and more time experimenting with the 
 
 ### Recording assets
 
-When paired with a compatible renderer, Particle Showcase can help create clean interactive scenes for screen recording.
+When paired with a compatible renderer, Particle Shape Lab can help create clean interactive scenes for screen recording.
 
 Typical controls may include:
 
@@ -150,14 +150,14 @@ Useful for short-form video, product demos, and visual content production.
 
 ### AI Agent pipelines
 
-Particle Showcase can also act as one step inside a larger automated creative pipeline:
+Particle Shape Lab can also act as one step inside a larger automated creative pipeline:
 
 ```text
 User request
      ↓
 AI Agent generates SVG
      ↓
-Particle Showcase converts it
+Particle Shape Lab converts it
      ↓
 External particle renderer
      ↓
@@ -170,7 +170,7 @@ This creates a stable interface between **graphics generation** and **particle r
 
 ## Quick start
 
-Particle Showcase Public can be used purely as a graphics-conversion tool, or as the preparation layer for a larger particle-rendering workflow.
+Particle Shape Lab can be used purely as a graphics-conversion tool, or as the preparation layer for a larger particle-rendering workflow.
 
 ### 1. Prepare an input
 
@@ -230,7 +230,7 @@ PNG conversion also produces `traced.svg`. The manifest records source hashes, c
 
 ### 3. Use the generated shape data
 
-At this point, the core Particle Showcase conversion workflow is complete.
+At this point, the core Particle Shape Lab conversion workflow is complete.
 
 The resulting data can be used by:
 
@@ -271,7 +271,7 @@ The full pipeline becomes:
 ```text
 Graphic
   ↓
-Particle Showcase Public
+Particle Shape Lab
   ↓
 Shape Data
   ↓
@@ -294,7 +294,7 @@ These capabilities belong to the rendering layer and are **not provided by a bun
 
 ## Input requirements
 
-Particle Showcase works best with simple, clearly defined graphics.
+Particle Shape Lab works best with simple, clearly defined graphics.
 
 ### SVG
 
@@ -348,7 +348,7 @@ Images containing heavy compression artifacts, noise, or blurred edges should id
 
 ---
 
-## What Particle Showcase Public is not
+## What Particle Shape Lab is not
 
 To keep expectations clear, this project is **not**:
 
@@ -362,7 +362,7 @@ A more accurate description is:
 
 > **A reusable graphics-normalization and adapter layer between static visual assets and particle renderers.**
 
-If you already have a particle engine, Particle Showcase removes much of the repetitive graphics-preparation work required to feed assets into it.
+If you already have a particle engine, Particle Shape Lab removes much of the repetitive graphics-preparation work required to feed assets into it.
 
 If you do not have a particle engine, the conversion and shape-data generation tools can still be used independently.
 
@@ -370,7 +370,7 @@ If you do not have a particle engine, the conversion and shape-data generation t
 
 ## Dependencies
 
-Particle Showcase Public has two conceptually separate dependency layers.
+Particle Shape Lab has two conceptually separate dependency layers.
 
 ### Conversion dependencies
 
@@ -400,7 +400,7 @@ These are possible targets for custom adapters, not a promise of universal built
 
 ---
 
-## Public repository scope
+## Repository scope
 
 The public version focuses on:
 
@@ -428,7 +428,7 @@ python -m unittest discover -s tests -v
 
 ## License
 
-Particle Showcase Public source code is licensed under the terms specified in the repository's `LICENSE` file.
+Particle Shape Lab source code is licensed under the terms specified in the repository's `LICENSE` file.
 
 MIT covers this toolkit’s code, documentation, and original generic test examples. **Brand logos and the demonstration GIFs are not relicensed under MIT by being included here.** They illustrate visual results and do not imply brand affiliation or endorsement. See [third-party notices](THIRD_PARTY.md) and [preview asset notes](assets/README.md).
 
@@ -438,7 +438,7 @@ Before publishing, redistributing, or using the project commercially, make sure 
 
 ---
 
-## Why Particle Showcase?
+## Why Particle Shape Lab?
 
 Before a particle effect ever reaches the rendering stage, there is usually a surprisingly boring chain of preparation work:
 
@@ -458,7 +458,7 @@ None of those steps is especially exciting.
 
 Unfortunately, computers have yet to develop enough shame to stop making humans repeat them.
 
-**Particle Showcase Public exists to turn that preparation layer into a reusable workflow.**
+**Particle Shape Lab exists to turn that preparation layer into a reusable workflow.**
 
 Start with a static graphic.
 

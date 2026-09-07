@@ -22,7 +22,7 @@ The first public run completed successfully on 2026-09-06 for commit `f9d58eef0f
 - Python 3.12 tests on Ubuntu, macOS, and Windows: success.
 - Non-rendering adapter fixture with independent npm installs on Node 22 and Node 24: success.
 
-[View the verified run](https://github.com/nengong-ai/particle-showcase-public/actions/runs/34034227925). These are actual GitHub-hosted jobs, not local directory simulations. The workflow does not download an engine, publish a viewer, or upload third-party artifacts. The adapter fixture remains a build/contract test and does not establish particle visual quality.
+[View the verified run](https://github.com/nengong-ai/particle-shape-lab/actions/runs/34034227925). These are actual GitHub-hosted jobs, not local directory simulations. The workflow does not download an engine, publish a viewer, or upload third-party artifacts. The adapter fixture remains a build/contract test and does not establish particle visual quality.
 
 The workflow environment scopes were checked against GitHub's [context availability reference](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability); runner-dependent paths are used in step environments, not unsupported job-level contexts.
 
