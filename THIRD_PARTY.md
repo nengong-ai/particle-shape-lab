@@ -23,3 +23,7 @@ The fixed manifest is a compatibility check, not an ownership or permission chec
 ## Package dependencies
 
 Pillow, NumPy, TypeScript, Vite, React, Three.js, postprocessing and their dependencies are obtained separately from package registries. They retain their own package licenses and notices. No dependency binaries or `node_modules` are bundled here. `requirements.txt` and `package-lock.json` record the dependency versions used in the local fresh-install verification.
+
+## README demonstration images
+
+The GIFs in assets/ are browser recordings of a separate brand showcase using an external renderer and brand-specific shapes and animation work. They are illustrations, not bundled renderer source or a guarantee that the public converter reproduces those presets. The OpenAI/ChatGPT, Claude and DeepSeek marks remain with their respective rights holders. These brand marks and demonstration GIFs are outside the toolkit MIT license. Their inclusion does not imply endorsement or affiliation. See assets/README.md for the capture and capability scope.
